@@ -27,7 +27,7 @@ $(document).ready(function() {
       // call the ajax method, passing it the type GET, and a URL with our API key at the end, and searchValue plugged in
       $.ajax({
         type: "GET",
-        url: "http://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=4e5ba1d148f321e975a3ab4ac38b8ed5&units=imperial",
+        url: "https://api.openweathermap.org/data/2.5/weather?q=" + searchValue + "&appid=4e5ba1d148f321e975a3ab4ac38b8ed5&units=imperial",
         dataType: "json",
         
         success: function(data) {
@@ -57,7 +57,7 @@ $(document).ready(function() {
           // make a <div> to hold card-body
           var cardBody = $("<div>").addClass("card-body");
           // make a <img> spot to hold the icon for sunny, cloudy, etc.
-          var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
+          var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png");
   
           // add the weather icon image to the title card
           title.append(img);
@@ -93,7 +93,7 @@ $(document).ready(function() {
       // make an api request for the forecast data
       $.ajax({
         type: "GET",
-        url: "http://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=4e5ba1d148f321e975a3ab4ac38b8ed5&units=imperial",
+        url: "https://api.openweathermap.org/data/2.5/forecast?q=" + searchValue + "&appid=4e5ba1d148f321e975a3ab4ac38b8ed5&units=imperial",
         dataType: "json",
         // if the request is a success, run the function
         success: function(data) {
@@ -113,7 +113,7 @@ $(document).ready(function() {
               // assign a variable to the title h5 tag with card-title class, add text from api data of the date
               var title = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
               // Assign the img variable to create an image icon based off of the weather forcast.
-              var img = $("<img>").attr("src", "http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
+              var img = $("<img>").attr("src", "https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png");
               // assign the temperature to <p>
               var p1 = $("<p>").addClass("card-text").text("Temp: " + data.list[i].main.temp_max + " °F");
               // assign the humidity to <p>
@@ -133,7 +133,7 @@ $(document).ready(function() {
     function getUVIndex(lat, lon) {
       $.ajax({
         type: "GET",
-        url: "http://api.openweathermap.org/data/2.5/uvi?appid=4e5ba1d148f321e975a3ab4ac38b8ed5&lat=" + lat + "&lon=" + lon,
+        url: "https://api.openweathermap.org/data/2.5/uvi?appid=4e5ba1d148f321e975a3ab4ac38b8ed5&lat=" + lat + "&lon=" + lon,
         dataType: "json",
         success: function(data) {
           // declare variables to create HTML elements to hold UV index and button
