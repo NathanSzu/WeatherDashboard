@@ -4,4 +4,4 @@ An application that pulls weather data from the openweathermap api based on spec
 
 Application found at https://nathanszu.github.io/WeatherDashboard/
 
-<img src="">
+<img src="https://raw.githubusercontent.com/NathanSzu/WeatherDashboard/master/Assets/screenshot.png">
